@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío de Lógica Automotriz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="text-center text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">🚗 Bienvenido al Desafío de Lógica con Estilo Automotriz</h1>
+            <img src="https://ae01.alicdn.com/kf/H453420be89b94e99afb99f41ecab8c8fG.jpg" alt="Auto deportivo moderno" class="img-fluid my-4" style="max-height: 300px;">
+            <p class="lead">Explora 4 desafíos de lógica de programación diseñados para estimular tu mente y mejorar tus habilidades técnicas. ¡Prepárate para pensar como un verdadero desarrollador!</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3"><div class="card-container"><div class="card-logic"><div class="card-icon">🧮</div><h3 class="card-title">Números Primos</h3><p class="card-description">Muestra todos los números primos entre dos valores que el usuario digite.</p><button class="btn btn-wave" data-bs-toggle="modal" data-bs-target="#modalPrimos">🔍 Ver solución</button></div></div></div>
+            <div class="col-md-6 col-lg-3"><div class="card-container"><div class="card-logic"><div class="card-icon">🧠</div><h3 class="card-title">Serie Fibonacci</h3><p class="card-description">Muestra la serie Fibonacci hasta el número que el usuario indique.</p><button class="btn btn-wave" data-bs-toggle="modal" data-bs-target="#modalFibonacci">🔍 Ver solución</button></div></div></div>
+            <div class="col-md-6 col-lg-3"><div class="card-container"><div class="card-logic"><div class="card-icon">⚙️</div><h3 class="card-title">Cálculo de IMC</h3><p class="card-description">Calcula el Índice de Masa Corporal usando altura (m) y peso (lbs).</p><button class="btn btn-wave" data-bs-toggle="modal" data-bs-target="#modalIMC">🔍 Ver solución</button></div></div></div>
+            <div class="col-md-6 col-lg-3"><div class="card-container"><div class="card-logic"><div class="card-icon">🔄</div><h3 class="card-title">Palabra Palíndroma</h3><p class="card-description">Verifica si una palabra o frase ingresada es palíndroma.</p><button class="btn btn-wave" data-bs-toggle="modal" data-bs-target="#modalPalindromo">🔍 Ver solución</button></div></div></div>
+        </div>
+    </main>
+
+    <!-- CORRECCIÓN AQUÍ: Nombre actualizado en el pie de página -->
+    <footer class="text-center text-white-50 py-4">
+        <p>🤖 Materia: Inteligencia Artificial | Sección 710 | Proyecto generado con prompt personalizado por Eriberto Pereyra Baez</p>
+    </footer>
+
+    <!-- MODALES (sin cambios estructurales) -->
+    <div class="modal fade" id="modalPrimos" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Solución: Números Primos</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><h6>Explicación Paso a Paso</h6><p>Un número primo es aquel mayor que 1 que solo es divisible por sí mismo y por 1. El algoritmo optimizado comprueba la divisibilidad solo hasta la raíz cuadrada del número. <a href="#" class="ejemplo-link" id="ejemploPrimos">Prueba con un ejemplo (1 a 50).</a></p><h6>Pruébalo tú mismo</h6><div class="row g-3 align-items-center"><div class="col"><input type="number" id="primosDesde" class="form-control" placeholder="Desde"></div><div class="col"><input type="number" id="primosHasta" class="form-control" placeholder="Hasta"></div><div class="col-auto"><button id="btnPrimos" class="btn btn-primary">Calcular</button></div></div><div class="mt-3"><strong>Resultado:</strong><div id="resultadoPrimos" class="resultado-box"></div></div></div></div></div></div>
+    <div class="modal fade" id="modalFibonacci" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Solución: Serie Fibonacci</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><h6>Explicación Detallada</h6><p>La secuencia Fibonacci suma los dos números anteriores para obtener el siguiente (ej. 0, 1, 1, 2, 3...). El código genera la serie hasta el límite indicado. <a href="#" class="ejemplo-link" id="ejemploFibonacci">Prueba con un ejemplo (límite 100).</a></p><h6>Pruébalo tú mismo</h6><div class="row g-3 align-items-center"><div class="col"><input type="number" id="fibonacciLimite" class="form-control" placeholder="Límite"></div><div class="col-auto"><button id="btnFibonacci" class="btn btn-primary">Generar</button></div></div><div class="mt-3"><strong>Resultado:</strong><div id="resultadoFibonacci" class="resultado-box"></div></div></div></div></div></div>
+    <div class="modal fade" id="modalIMC" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Solución: Cálculo de IMC</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><h6>Fórmula Explicada</h6><p>El IMC es `peso (kg) / (altura (m)²)`. El peso en libras se convierte primero a kg (1 lb ≈ 0.45 kg) para usar en la fórmula. <a href="#" class="ejemplo-link" id="ejemploIMC">Prueba con un ejemplo (1.75m, 165 lbs).</a></p><h6>Pruébalo tú mismo</h6><div class="row g-3 align-items-center"><div class="col"><input type="number" id="imcAltura" class="form-control" placeholder="Altura (metros)" step="0.01"></div><div class="col"><input type="number" id="imcPeso" class="form-control" placeholder="Peso (libras)"></div><div class="col-auto"><button id="btnIMC" class="btn btn-primary">Calcular</button></div></div><div class="mt-3"><strong>Resultado:</strong><div id="resultadoIMC" class="resultado-box"></div></div></div></div></div></div>
+    <div class="modal fade" id="modalPalindromo" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Solución: Palabra Palíndroma</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><h6>Lógica Explicada</h6><p>Un palíndromo se lee igual en ambos sentidos. El código limpia el texto de espacios y puntuación, lo invierte y compara ambas versiones. <a href="#" class="ejemplo-link" id="ejemploPalindromo">Prueba con un ejemplo ("Anita lava la tina").</a></p><h6>Pruébalo tú mismo</h6><div class="row g-3 align-items-center"><div class="col"><input type="text" id="palindromoTexto" class="form-control" placeholder="Escribe una palabra o frase"></div><div class="col-auto"><button id="btnPalindromo" class="btn btn-primary">Verificar</button></div></div><div class="mt-3"><strong>Resultado:</strong><div id="resultadoPalindromo" class="resultado-box"></div></div></div></div></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
